@@ -1,8 +1,8 @@
 // loaders
-const { VueLoaderPlugin } = require('vue-loader');
+const { VueLoaderPlugin } = require("vue-loader");
 
 // plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const path = require("path");
 const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
@@ -13,10 +13,15 @@ module.exports = {
     path: resolve("./dist"),
     filename: "QManager.bundle.js",
   },
+  resolve: {
+    alias: {
+      "@": resolve("./"),
+      "@components": resolve("./src/components"),
+      "@views": resolve("./src/views"),
+    },
+  },
   module: {
-    rules: [
-      { test: /\.vue$/, loader: 'vue-loader' }
-    ]
+    rules: [{ test: /\.vue$/, loader: "vue-loader" }],
   },
   plugins: [
     new VueLoaderPlugin(),
