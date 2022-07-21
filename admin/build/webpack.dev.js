@@ -1,8 +1,8 @@
 const { merge } = require("webpack-merge");
-const common = require("./webpack.common.js");
 
 const path = require("path");
 const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
+const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "development",
@@ -12,5 +12,6 @@ module.exports = merge(common, {
     client: {
       logging: "warn",
     },
+    historyApiFallback: true,
   },
 });

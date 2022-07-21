@@ -1,8 +1,8 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Layout from "@/src/layout/index.vue";
 
 export default createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
@@ -12,7 +12,7 @@ export default createRouter({
         {
           name: "Home",
           path: "home",
-          component: import("@views/Home/home.vue"),
+          component: () => import("@views/Home/home.vue"),
         },
       ],
     },

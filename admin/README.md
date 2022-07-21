@@ -1,6 +1,10 @@
 # QManager
 
-初始化项目
+## 开始
+
+### 项目搭建
+
+使用webpack5构建，项目搭建移步：[webpack指南]
 
 ```
 ├─build
@@ -19,17 +23,53 @@
 ├─README.md
 ```
 
-使用webpack5构建，项目搭建移步：[webpack指南]
+### VueRouter
+
+1. 安装依赖：`npm i vue-router@next`
+
+2. 新建 `@/router/index.js`，创建router实例
+   
+   ```js
+   import { createRouter, createWebHistory } from "vue-router";
+   import Layout from "@/src/layout/index.vue";
+   
+   export default createRouter({
+     history: createWebHistory(),
+     routes: [
+       {
+         path: "/",
+         redirect: "/home",
+         component: Layout,
+         children: [
+           {
+             name: "Home",
+             path: "home",
+             component: () => import("@views/Home/home.vue"),
+           },
+         ],
+       },
+     ],
+   });
+   ```
+
+3. Vue3安装插件
+   
+   ```js
+   import { createApp } from "vue";
+   import router from "@/src/router/index.js";
+   
+   import App from "./App.vue";
+   
+   createApp(App).use(router).mount("#app");
+   ```
+
+### layout
 
 
 
-指南添加
+### Element Plus
 
-配置添加 
 
-element plus引入
-
-vue3写法
 
 ## 产品文档
 

@@ -10,7 +10,6 @@ const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
 module.exports = {
   entry: resolve("./src/main.js"),
   output: {
-    publicPath: "/",
     path: resolve("./dist"),
     filename: "QManager.bundle.js",
   },
@@ -30,4 +29,4 @@ module.exports = {
       template: resolve("./public/index.html"),
     }),
   ],
-};
+}
