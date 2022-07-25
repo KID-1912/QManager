@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div>头部</div>
-    <div>侧边栏</div>
-    <div>
-      主体
-      <router-view />
-    </div>
+    <Header/>
+    <Sidebar/>
+    <AppMain/>
   </div>
 </template>
 
 <script>
-export default {};
+import Header from './Header.vue';
+import Sidebar from './Sidebar.vue';
+import AppMain from './AppMain.vue';
+export default {
+  components: {Header, Sidebar, AppMain}
+};
 </script>
 
 <style></style>

@@ -4,7 +4,7 @@
 
 ### 项目搭建
 
-使用webpack5构建，项目搭建移步：[webpack指南]
+使用webpack5构建，项目搭建移步：[webpack指南](https://kid-1912.github.io/2022/07/18/webpack%E6%8C%87%E5%8D%97/)
 
 ```
 ├─build
@@ -52,7 +52,7 @@
    });
    ```
 
-3. Vue3安装插件
+3. router插件
    
    ```js
    import { createApp } from "vue";
@@ -65,13 +65,25 @@
 
 ### layout
 
-
+主界面布局组件：包含 `header`，`main`，`aside` 公共部分；目的在于实现良好的路由结构
 
 ### Element Plus
 
+引入 `Element Plus` UI组件库，移步[Element Plus]
 
 
-## 产品文档
+
+代办
+
+style-loader/css-loader
+
+引入element-plus
+
+unplugin-auto-import/webpack
+
+unplugin-vue-components/webpack
+
+## 文档
 
 侧边栏
 
