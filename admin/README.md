@@ -38,12 +38,11 @@
      routes: [
        {
          path: "/",
-         redirect: "/home",
+         name: "Home",
          component: Layout,
          children: [
            {
-             name: "Home",
-             path: "home",
+             path: "/",
              component: () => import("@views/Home/home.vue"),
            },
          ],
@@ -71,8 +70,6 @@
 
 引入 `Element Plus` UI组件库，移步[Element Plus]
 
-
-
 代办
 
 style-loader/css-loader
@@ -84,6 +81,8 @@ unplugin-auto-import/webpack
 unplugin-vue-components/webpack
 
 ## 文档
+
+实现layout：scss支持，stylelint/preter支持，husky支持
 
 侧边栏
 

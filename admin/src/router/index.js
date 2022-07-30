@@ -5,13 +5,12 @@ export default createRouter({
   history: createWebHistory(),
   routes: [
     {
+      name: "Home",
       path: "/",
-      redirect: "/home",
       component: Layout,
       children: [
         {
-          name: "Home",
-          path: "home",
+          path: "/",
           component: () => import("@views/Home/home.vue"),
         },
       ],
