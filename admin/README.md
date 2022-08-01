@@ -70,11 +70,9 @@
 
 引入 `Element Plus` UI组件库，移步[Element Plus]
 
+
+
 代办
-
-style-loader/css-loader
-
-引入element-plus
 
 unplugin-auto-import/webpack
 
