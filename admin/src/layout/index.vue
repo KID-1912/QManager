@@ -1,17 +1,15 @@
 <template>
   <div>
-    <Header/>
+    <Navbar/>
     <Sidebar/>
     <AppMain/>
   </div>
 </template>
 
 <script>
-import Header from './Header.vue';
-import Sidebar from './Sidebar.vue';
-import AppMain from './AppMain.vue';
+import {Navbar,Sidebar,AppMain } from './components';
 export default {
-  components: {Header, Sidebar, AppMain}
+  components: {Navbar, Sidebar, AppMain}
 };
 </script>
 

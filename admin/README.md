@@ -68,9 +68,7 @@
 
 ### Element Plus
 
-引入 `Element Plus` UI组件库，移步[Element Plus]
-
-
+引入 `Element Plus` UI组件库，移步 [Element Plus](https://kid-1912.github.io/2021/06/03/ElementPlus/) 或官方文档
 
 代办
 
@@ -79,6 +77,8 @@ unplugin-auto-import/webpack
 unplugin-vue-components/webpack
 
 ## 文档
+
+normalize.css
 
 实现layout：scss支持，stylelint/preter支持，husky支持
 
