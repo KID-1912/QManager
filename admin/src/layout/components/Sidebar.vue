@@ -1,5 +1,5 @@
 <template>
-  <div>侧边</div>
+  <el-aside>侧边</el-aside>
 </template>
 
 <script>
@@ -8,6 +8,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.el-aside{
+  border-right:  1px solid #e7e9eb;
+}
 </style>

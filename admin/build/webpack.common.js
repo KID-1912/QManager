@@ -19,13 +19,14 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@": resolve("./"),
-      "@components": resolve("./src/components"),
-      "@views": resolve("./src/views"),
+      "@": resolve("src"),
+      "@components": resolve("src/components"),
+      "@views": resolve("src/views"),
     },
   },
   module: {
     rules: [
+      { test: /\.css$/, use: ["style-loader", 'css-loader'] },
       { test: /\.vue$/, loader: "vue-loader" }
     ],
   },

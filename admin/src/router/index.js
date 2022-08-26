@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Layout from "@/src/layout/index.vue";
+import Layout from "@/layout/index.vue";
 
 export default createRouter({
   history: createWebHistory(),

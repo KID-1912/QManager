@@ -1,6 +1,7 @@
 import { createApp } from "vue";
-import router from "@/src/router/index.js";
+import router from "@/router/index.js";
 import 'normalize.css/normalize.css';
+import './style/index.css';
 
 import ElementPlus from 'element-plus';
 

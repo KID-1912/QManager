@@ -72,15 +72,15 @@
 
 代办
 
-unplugin-auto-import/webpack
-
-unplugin-vue-components/webpack
-
 ## 文档
 
-normalize.css
+实现layout：scss支持，virables变量
 
-实现layout：scss支持，stylelint/preter支持，husky支持
+stylelint/preter支持
+
+打包标记build at xxxx
+
+husky支持
 
 侧边栏
 

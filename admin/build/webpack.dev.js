@@ -14,9 +14,5 @@ module.exports = merge(common, {
     },
     historyApiFallback: true,
   },
-  module: {
-    rules: [
-      { test: /\.css$/, use: ["style-loader", 'css-loader'] },
-    ]
-  }
+  module: {rules: []}
 });
