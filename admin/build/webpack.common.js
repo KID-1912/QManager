@@ -5,7 +5,8 @@ const { VueLoaderPlugin } = require("vue-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
-const {ElementPlusResolver} = require('unplugin-vue-components/resolvers')
+const {ElementPlusResolver} = require('unplugin-vue-components/resolvers');
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 
 const path = require("path");
 const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
@@ -26,11 +27,13 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.css$/, use: ["style-loader", 'css-loader'] },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.s[ac]ss$/, use: ["style-loader", "css-loader", "sass-loader"]},
       { test: /\.vue$/, loader: "vue-loader" }
     ],
   },
   plugins: [
+    new WindiCSSWebpackPlugin(),
     new VueLoaderPlugin(),
     AutoImport({
       resolvers: [ElementPlusResolver()]
