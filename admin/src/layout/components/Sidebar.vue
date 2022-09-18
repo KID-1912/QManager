@@ -3,13 +3,11 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style scoped>
-.el-aside{
-  border-right:  1px solid #e7e9eb;
+<style lang="scss" scoped>
+.el-aside {
+  border-right: 1px solid #e7e9eb;
 }
 </style>
