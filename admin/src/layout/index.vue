@@ -1,22 +1,22 @@
 <template>
-  <el-container direction="vertical">
-    <Navbar/>
-    <el-container>
-      <Sidebar/>
-      <AppMain/>
-    </el-container>
+  <el-container class="flex-col">
+    <Navbar />
+    <div class="flex basis-full">
+      <Sidebar />
+      <AppMain />
+    </div>
   </el-container>
 </template>
 
 <script>
-import {Navbar,Sidebar,AppMain } from './components';
+import { Navbar, Sidebar, AppMain } from "./components";
 export default {
-  components: {Navbar, Sidebar, AppMain}
+  components: { Navbar, Sidebar, AppMain },
 };
 </script>
 
-<style scoped>
-.el-container{
+<style lang="scss" scoped>
+.el-container {
   height: 100%;
 }
 </style>

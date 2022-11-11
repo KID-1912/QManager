@@ -1,10 +1,10 @@
-const { merge } = require("webpack-merge");
-
-const path = require("path");
-const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
 const common = require("./webpack.common.js");
 
-module.exports = merge(common, {
+const { mergeWithRules } = require("webpack-merge");
+const path = require("path");
+const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
+
+const config = {
   mode: "development",
   devtool: "eval-cheap-module-source-map",
   devServer: {
@@ -14,5 +14,16 @@ module.exports = merge(common, {
     },
     historyApiFallback: true,
   },
-  module: {rules: []}
-});
+  module: {
+    rules: [
+      { test: /\.css$/, use: ["style-loader"] },
+      { test: /\.s[ac]ss$/, use: ["style-loader"] },
+    ],
+  },
+};
+
+module.exports = mergeWithRules({
+  module: {
+    rules: { test: "match", use: "prepend" },
+  },
+})(common, config);

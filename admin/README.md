@@ -23,7 +23,7 @@
 ├─README.md
 ```
 
-### VueRouter
+### VueRouter4
 
 1. 安装依赖：`npm i vue-router@next`
 
@@ -68,15 +68,19 @@
 
 ### Element Plus
 
-引入 `Element Plus` UI组件库，移步 [Element Plus](https://kid-1912.github.io/2021/06/03/ElementPlus/) 或官方文档
+引入 `Element Plus` UI组件库，移步 [Element Plus](https://kid-1912.github.io/2021/06/03/ElementPlus/) 或[官方文档](https://element-plus.gitee.io/)
+
+### WindiCss
+
+添加css工具类支持，移步[WindiCss]()或[官方文档](https://cn.windicss.org/)
 
 代办
 
 ## 文档
 
-实现layout：scss支持，virables变量
-
 stylelint/preter支持
+
+svg图标支持
 
 打包标记build at xxxx
 
@@ -87,3 +91,17 @@ husky支持
 - 最近
 - 模板
 - 我的
+
+项目意义
+
+项目搭建：webpack5(loader,plugin,config,eslint/stylelint,pretter),
+
+vue3,pinao,router4,
+
+elementplus, windicss
+
+echart
+
+husky与自动化打包
+
+拖拽工具(数据)
