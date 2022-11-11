@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-  const popperOptions = {modifiers: [{name:'offset', options: {offset: [0,2] }}]};
 </script>
 
 <style lang="scss" scoped>
