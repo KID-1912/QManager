@@ -8,4 +8,6 @@ import ElementPlus from "element-plus";
 
 import App from "./App.vue";
 
+let a;
+
 createApp(App).use(router).use(ElementPlus).mount("#app");

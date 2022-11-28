@@ -2,6 +2,7 @@
 const { VueLoaderPlugin } = require("vue-loader");
 
 // plugins
+const ESLintPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const AutoImport = require("unplugin-auto-import/webpack");
 const Components = require("unplugin-vue-components/webpack");
@@ -47,10 +48,19 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: { cacheDirectory: true },
+        },
+      },
       { test: /\.vue$/, loader: "vue-loader" },
     ],
   },
   plugins: [
+    new ESLintPlugin({ emitWarning: false }),
     new WindiCSSWebpackPlugin(),
     new VueLoaderPlugin(),
     AutoImport({
