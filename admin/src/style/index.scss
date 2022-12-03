@@ -1,10 +1,25 @@
-@import './variables.scss';
+// 全局样式
 
-html,body{
+@import "./variables.scss";
+
+html,
+body {
   height: 100%;
   font-size: 14px;
   line-height: 1;
 }
-#app{
+#app {
   height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 3px;
 }

@@ -7,10 +7,16 @@ const resolve = (filePath) => path.resolve(__dirname, "../", filePath);
 const config = {
   mode: "development",
   devtool: "eval-cheap-module-source-map",
+  stats: "minimal",
   devServer: {
     static: resolve("./dist"),
     client: {
       logging: "warn",
+      progress: true,
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
     },
     historyApiFallback: true,
   },

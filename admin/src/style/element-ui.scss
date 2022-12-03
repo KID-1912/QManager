@@ -1,0 +1,13 @@
+// 覆盖部分element-ui样式
+
+// 按钮
+.el-button {
+  & + .el-button {
+    margin-left: 0;
+  }
+}
+
+// 多选框
+.el-checkbox {
+  height: auto;
+}

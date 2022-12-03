@@ -1,7 +1,7 @@
 <template>
   <el-container class="flex-col">
     <Navbar />
-    <div class="flex basis-full">
+    <div class="flex flex-1 h-0">
       <Sidebar />
       <AppMain />
     </div>
@@ -9,9 +9,16 @@
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain } from "./components";
+import AppMain from "./AppMain";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+
 export default {
-  components: { Navbar, Sidebar, AppMain },
+  components: {
+    AppMain,
+    Navbar,
+    Sidebar,
+  },
 };
 </script>
 

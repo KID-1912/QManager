@@ -1,13 +1,14 @@
 import { createApp } from "vue";
 import router from "@/router/index.js";
+
+// style
 import "normalize.css/normalize.css";
 import "windi.css";
 import "./style/index.scss";
 
-import ElementPlus from "element-plus";
+// element-ui
+import "./style/element-ui.scss";
 
 import App from "./App.vue";
 
-let a;
-
-createApp(App).use(router).use(ElementPlus).mount("#app");
+createApp(App).use(router).mount("#app");

@@ -6,7 +6,9 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const AutoImport = require("unplugin-auto-import/webpack");
 const Components = require("unplugin-vue-components/webpack");
+const Icons = require("unplugin-icons/webpack");
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
+const IconsResolver = require("unplugin-icons/resolver");
 const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 
 const path = require("path");
@@ -25,6 +27,7 @@ module.exports = {
       "@components": resolve("src/components"),
       "@views": resolve("src/views"),
     },
+    extensions: [".js", ".json", ".wasm", ".vue"],
   },
   module: {
     rules: [
@@ -60,15 +63,23 @@ module.exports = {
     ],
   },
   plugins: [
-    new ESLintPlugin({ emitWarning: false }),
+    new ESLintPlugin(),
     new WindiCSSWebpackPlugin(),
     new VueLoaderPlugin(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        IconsResolver({
+          prefix: false,
+          enabledCollections: ["ep"],
+          alias: { svg: "ep" },
+        }),
+        ElementPlusResolver(),
+      ],
     }),
+    Icons({ compiler: "vue3", autoInstall: true }),
     new HtmlWebpackPlugin({
       template: resolve("./public/index.html"),
     }),
