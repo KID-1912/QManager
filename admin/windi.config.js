@@ -7,6 +7,7 @@ export default defineConfig({
     // if you are excluding files, make sure you always include node_modules and .git
     exclude: ["node_modules", ".git", "dist"],
   },
+  safelist: "block visible",
   theme: {
     fontSize: {
       xs: "12px",
