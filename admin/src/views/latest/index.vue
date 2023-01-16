@@ -1,11 +1,11 @@
 <template>
   <div class="latest-content-container pl-16px pr-32px">
     <div class="relative">
+      <!-- header -->
       <div class="header flex">
         <el-checkbox
           :value="isCheckAll"
-          class="invisible"
-          :class="{ visible: showCheckbox }"
+          :class="showCheckbox ? 'visible' : 'invisible'"
           :indeterminate="isIndeterminate"
           @change="handleCheckAll"
         ></el-checkbox>
@@ -14,6 +14,7 @@
         </div>
         <div v-else class="title basis-full">最近打开</div>
       </div>
+      <!-- 列表 -->
       <div class="group" v-if="docData.yesterday.length">
         <div class="group-title">昨天</div>
         <el-checkbox-group v-model="selectedDocList" class="list">
@@ -24,7 +25,7 @@
           >
             <el-checkbox
               :label="doc.name"
-              :class="{ visible: showCheckbox }"
+              :class="showCheckbox ? 'visible' : 'invisible'"
             ></el-checkbox>
             <div class="row-item">{{ doc.name }}</div>
           </div>
@@ -40,7 +41,7 @@
           >
             <el-checkbox
               :label="doc.name"
-              :class="{ visible: showCheckbox }"
+              :class="showCheckbox ? 'visible' : 'invisible'"
             ></el-checkbox>
             <div class="row-item">{{ doc.name }}</div>
           </div>
@@ -56,7 +57,7 @@
           >
             <el-checkbox
               :label="doc.name"
-              :class="{ visible: showCheckbox }"
+              :class="showCheckbox ? 'visible' : 'invisible'"
             ></el-checkbox>
             <div class="row-item">{{ doc.name }}</div>
           </div>
@@ -93,7 +94,7 @@ const getDocData = async function () {
     })),
   };
 };
-onMounted(() => getDocData());
+onMounted(getDocData);
 
 // 选中集合
 const selectedDocList = ref([]);
@@ -125,9 +126,6 @@ const handleCheckAll = function () {
   z-index: 9;
   padding-top: 16px;
   background-color: #fff;
-  .el-checkbox.visible {
-    visibility: visible;
-  }
   .title {
     line-height: 46px;
     margin-left: 25px;
@@ -147,17 +145,15 @@ const handleCheckAll = function () {
   }
   .row-item-container {
     position: relative;
-    .el-checkbox:deep {
+    :deep(.el-checkbox) {
       position: absolute;
-      visibility: hidden;
       top: 25px;
       left: 0;
       .el-checkbox__label {
         display: none;
       }
     }
-    &:hover .el-checkbox,
-    .el-checkbox.visible {
+    &:hover .el-checkbox {
       visibility: visible;
     }
     .row-item {

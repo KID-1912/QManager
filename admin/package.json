@@ -47,7 +47,6 @@
     "windicss-webpack-plugin": "^1.7.6"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.0.10",
     "@types/vue-router": "^2.0.0",
     "core-js": "^3.26.1",
     "element-plus": "^2.2.10",

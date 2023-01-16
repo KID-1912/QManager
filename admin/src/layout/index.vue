@@ -1,9 +1,9 @@
 <template>
   <el-container class="flex-col">
-    <Navbar />
+    <navbar />
     <div class="flex flex-1 h-0">
-      <Sidebar />
-      <AppMain />
+      <sidebar />
+      <app-main />
     </div>
   </el-container>
 </template>

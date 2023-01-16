@@ -1,10 +1,12 @@
 <template>
   <el-header>
-    <div class="logo"><i class="logo-icon"></i>QManager</div>
+    <div class="logo">
+      <el-icon class="logo-icon"><SvgQm /></el-icon>QManager
+    </div>
     <div class="searcher ml-150px flex-1">
       <el-input class="w-640px" placeholder="通过文件名、正文、创建人搜索文档">
         <template #prefix>
-          <el-icon><SvgSearch /></el-icon>
+          <el-icon><ElSvgSearch /></el-icon>
         </template>
       </el-input>
     </div>
@@ -26,11 +28,8 @@
     align-items: center;
     color: #48576a;
     .logo-icon {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
+      font-size: 25px;
       margin-right: 10px;
-      background-image: url("~@/icons/svg/logo-person.svg");
     }
   }
   .searcher .el-input {

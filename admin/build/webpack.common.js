@@ -9,6 +9,7 @@ const Components = require("unplugin-vue-components/webpack");
 const Icons = require("unplugin-icons/webpack");
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
 const IconsResolver = require("unplugin-icons/resolver");
+const { FileSystemIconLoader } = require("unplugin-icons/loaders");
 const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 
 const path = require("path");
@@ -73,13 +74,20 @@ module.exports = {
       resolvers: [
         IconsResolver({
           prefix: false,
+          alias: { "el-svg": "ep" },
           enabledCollections: ["ep"],
-          alias: { svg: "ep" },
+          customCollections: ["svg"],
         }),
         ElementPlusResolver(),
       ],
     }),
-    Icons({ compiler: "vue3", autoInstall: true }),
+    Icons({
+      compiler: "vue3",
+      autoInstall: true,
+      customCollections: {
+        svg: FileSystemIconLoader(resolve("src/icons/svg")),
+      },
+    }),
     new HtmlWebpackPlugin({
       template: resolve("./public/index.html"),
     }),
