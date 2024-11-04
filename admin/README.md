@@ -78,30 +78,10 @@
 
 ## 文档
 
-stylelint/preter支持
+stylelint/prettier支持
 
 svg图标支持
 
 打包标记build at xxxx
 
-husky支持
-
-侧边栏
-
-- 最近
-- 模板
-- 我的
-
-项目意义
-
-项目搭建：webpack5(loader,plugin,config,eslint/stylelint,pretter),
-
-vue3,pinao,router4,
-
-elementplus, windicss
-
-echart
-
-husky与自动化打包
-
-拖拽工具(数据)
+输出分离
