@@ -104,11 +104,7 @@ module.exports = {
         svg: FileSystemIconLoader(resolve("src/components/SvgIcon")),
       },
     }),
-    new webpack.ProgressPlugin({
-      // `percent`：显示进度百分比
-      // `modules`：显示当前正在构建的模块数
-      // `activeModules`：显示当前活动模块
-    }),
+    new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: resolve("./public/index.html"),
       templateParameters: { build_time: new Date().toLocaleString() },
