@@ -6,13 +6,13 @@ export default createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/latest",
+      redirect: "/index",
       component: Layout,
       children: [
         {
-          name: "latest",
-          path: "/latest",
-          component: () => import("@views/latest/index.vue"),
+          name: "index",
+          path: "/index",
+          component: () => import(/* webpackChunkName: "index" */ "@views/index.vue"),
         },
       ],
     },

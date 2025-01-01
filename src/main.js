@@ -4,10 +4,7 @@ import router from "@/router/index.js";
 // style
 import "normalize.css/normalize.css";
 import "windi.css";
-import "./style/index.scss";
-
-// element-ui
-import "./style/element-ui.scss";
+import "./style/global.scss";
 
 import App from "./App.vue";
 

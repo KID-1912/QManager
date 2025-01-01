@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+
 // loaders
 const { VueLoaderPlugin } = require("vue-loader");
 
@@ -20,7 +22,9 @@ module.exports = {
   output: {
     clean: true,
     path: resolve("./dist"),
-    filename: "QManager.bundle.js",
+    filename: "js/[name]-[contenthash].js",
+    chunkFilename: "js/[name]-[contenthash].js",
+    assetModuleFilename: "assets/[name]-[contenthash].[ext]",
   },
   resolve: {
     alias: {
@@ -32,6 +36,13 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf|otf)$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: { maxSize: 10 * 1024 },
+        },
+      },
       { test: /\.css$/, use: ["css-loader"] },
       {
         test: /\.s[ac]ss$/,
@@ -42,7 +53,7 @@ module.exports = {
             options: {
               additionalData: (content) => {
                 const additionalData = `
-                  @import "~@/style/variables.scss";
+                  @use "@/style/variables.scss" as *;
                   $env: "${process.env.NODE_ENV}";
                   $staticUrl: "${process.env.VUE_APP_STATIC_URL}";
                 `;
@@ -68,6 +79,11 @@ module.exports = {
     new WindiCSSWebpackPlugin(),
     new VueLoaderPlugin(),
     AutoImport({
+      imports: ["vue", "vue-router"],
+      eslintrc: {
+        enabled: true,
+        filepath: "./eslintrc-auto-import.json",
+      },
       resolvers: [ElementPlusResolver()],
     }),
     Components({
@@ -85,11 +101,17 @@ module.exports = {
       compiler: "vue3",
       autoInstall: true,
       customCollections: {
-        svg: FileSystemIconLoader(resolve("src/icons/svg")),
+        svg: FileSystemIconLoader(resolve("src/components/SvgIcon")),
       },
+    }),
+    new webpack.ProgressPlugin({
+      // `percent`：显示进度百分比
+      // `modules`：显示当前正在构建的模块数
+      // `activeModules`：显示当前活动模块
     }),
     new HtmlWebpackPlugin({
       template: resolve("./public/index.html"),
+      templateParameters: { build_time: new Date().toLocaleString() },
     }),
   ],
 };
